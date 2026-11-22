@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f4">
+  <title>CampusConnect — Find your people</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body data-page="events">
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="CampusConnect home"><span class="brand-mark">c<span>.</span></span><span>campus<span class="brand-light">connect</span></span></a>
+    <nav class="nav-links" aria-label="Main navigation"><a class="nav-link active" href="index.html">Discover</a><a class="nav-link" href="registrations.html">My registrations <span class="nav-count" id="nav-count">0</span></a></nav>
+    <button class="profile-chip" id="identity-open" type="button"><span class="avatar">Y</span><span id="identity-label">Set your ID</span><span class="chevron">⌄</span></button>
+  </header>
+
+  <main class="page-shell">
+    <section class="hero">
+      <div class="hero-copy"><div class="eyebrow"><span class="live-dot"></span> YOUR CAMPUS, MORE CONNECTED</div><h1>Make room for<br><span>something new.</span></h1><p>Meet the people, ideas and experiences that make campus feel like yours.</p><a class="hero-cta" href="#events">Explore events <span>↓</span></a></div>
+      <div class="hero-art" aria-label="Illustration of students sharing ideas"><div class="sun-shape"></div><div class="art-note note-one">good things<br>happen together <span>✳</span></div><div class="art-circle circle-one"></div><div class="art-circle circle-two"></div><div class="art-person person-one"><i></i><b></b></div><div class="art-person person-two"><i></i><b></b></div><div class="art-person person-three"><i></i><b></b></div><div class="art-ground"></div><div class="art-spark spark-one">✦</div><div class="art-spark spark-two">✳</div><div class="art-caption">A little out of your usual.<br>A lot more you.</div></div>
+      <div class="hero-index">01 <span>—</span> 02</div>
+    </section>
+
+    <section class="events-section" id="events">
+      <div class="section-heading"><div><div class="eyebrow muted">FIND YOUR NEXT THING</div><h2>Happening around you<span class="period">.</span></h2><p class="section-subtitle">Good plans start with showing up.</p></div><div class="event-tools"><label class="search-box"><span>⌕</span><input id="event-search" type="search" placeholder="Search events" aria-label="Search events"></label><button class="filter-button selected" data-filter="all">All events</button><button class="filter-button" data-filter="open">Open spots</button></div></div>
+      <div class="notice" id="api-notice" hidden></div>
+      <div class="event-grid" id="event-grid" aria-live="polite"><div class="loading-card"><span class="spinner"></span> Finding campus events…</div></div>
+      <div class="section-footer"><span>Make a plan. Bring a friend.</span><span class="footer-doodle">✳</span></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="brand footer-brand" href="index.html"><span class="brand-mark">c<span>.</span></span><span>campus<span class="brand-light">connect</span></span></a><span>Made for the moments between classes.</span><span>© CampusConnect</span></footer>
+
+  <dialog class="modal" id="identity-modal"><form method="dialog" class="modal-card" id="identity-form"><button class="modal-close" aria-label="Close" value="cancel">×</button><div class="eyebrow muted">YOUR CAMPUS PROFILE</div><h2>Let’s get you in.</h2><p>Your project API doesn’t include sign-in yet. Enter your user UUID to register and see your events.</p><label class="field-label" for="user-id">User ID <span>UUID</span></label><input class="text-input" id="user-id" name="user_id" placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" autocomplete="off"><div class="form-error" id="identity-error" role="alert"></div><button class="primary-button" id="save-identity" value="default">Save profile <span>→</span></button><div class="hint-box">Your ID is saved only in this browser.</div></form></dialog>
+  <dialog class="modal" id="register-modal"><form method="dialog" class="modal-card"><button class="modal-close" aria-label="Close" value="cancel">×</button><div class="event-icon modal-icon" id="register-icon">✳</div><div class="eyebrow muted">SAVE YOUR SPOT</div><h2 id="register-title">Join this event?</h2><p id="register-copy">You’re one step away from a good plan.</p><div class="form-error" id="register-error" role="alert"></div><button class="primary-button" id="confirm-register" value="default">Count me in <span>→</span></button><button class="text-button" value="cancel">Maybe later</button></form></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

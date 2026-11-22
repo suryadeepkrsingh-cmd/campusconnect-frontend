@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f4">
+  <title>My registrations — CampusConnect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body data-page="registrations">
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="CampusConnect home"><span class="brand-mark">c<span>.</span></span><span>campus<span class="brand-light">connect</span></span></a>
+    <nav class="nav-links" aria-label="Main navigation"><a class="nav-link" href="index.html">Discover</a><a class="nav-link active" href="registrations.html">My registrations <span class="nav-count" id="nav-count">0</span></a></nav>
+    <button class="profile-chip" id="identity-open" type="button"><span class="avatar">Y</span><span id="identity-label">Set your ID</span><span class="chevron">⌄</span></button>
+  </header>
+  <main class="page-shell subpage-shell">
+    <section class="my-hero"><div class="eyebrow"><span class="live-dot"></span> YOUR CAMPUS CALENDAR</div><h1>Your next<br><span>good thing.</span></h1><p>Every yes is a chance to find your people.</p><div class="my-hero-mark">✳</div><div class="my-hero-number"><strong id="registration-total">00</strong><span>THINGS<br>TO LOOK FORWARD TO</span></div></section>
+    <section class="registrations-section"><div class="section-heading compact-heading"><div><div class="eyebrow muted">THE PLANS YOU’VE MADE</div><h2>On your list<span class="period">.</span></h2></div><a class="back-link" href="index.html">← Find more events</a></div><div class="notice" id="api-notice" hidden></div><div class="registration-list" id="registration-list" aria-live="polite"><div class="loading-card"><span class="spinner"></span> Pulling up your plans…</div></div></section>
+    <section class="bottom-cta"><div><div class="eyebrow">KEEP THE GOOD GOING</div><h2>There’s always<br>something happening.</h2></div><a class="hero-cta" href="index.html#events">Find your next thing <span>→</span></a><span class="cta-spark">✳</span></section>
+  </main>
+  <footer class="site-footer"><a class="brand footer-brand" href="index.html"><span class="brand-mark">c<span>.</span></span><span>campus<span class="brand-light">connect</span></span></a><span>Made for the moments between classes.</span><span>© CampusConnect</span></footer>
+  <dialog class="modal" id="identity-modal"><form method="dialog" class="modal-card" id="identity-form"><button class="modal-close" aria-label="Close" value="cancel">×</button><div class="eyebrow muted">YOUR CAMPUS PROFILE</div><h2>Let’s get you in.</h2><p>Your project API doesn’t include sign-in yet. Enter your user UUID to register and see your events.</p><label class="field-label" for="user-id">User ID <span>UUID</span></label><input class="text-input" id="user-id" name="user_id" placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" autocomplete="off"><div class="form-error" id="identity-error" role="alert"></div><button class="primary-button" id="save-identity" value="default">Save profile <span>→</span></button><div class="hint-box">Your ID is saved only in this browser.</div></form></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
